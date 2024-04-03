@@ -1,10 +1,31 @@
 import { Link } from "react-router-dom";
 
+const navigations = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Products",
+    path: "/products",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
 const Header = () => {
   return (
     <header className="text-gray-600 body-font shadow-xl px-5">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link to={`/`} className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <Link
+          to={`/`}
+          className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -17,13 +38,20 @@ const Header = () => {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <span className="ml-3 text-xl cursor-pointer hover:text-purple-900">DesiBazaar</span>
+          <span className="ml-3 text-xl cursor-pointer hover:text-purple-900">
+            DesiBazaar
+          </span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900 cursor-pointer">First Link</a>
-          <a className="mr-5 hover:text-gray-900 cursor-pointer">Second Link</a>
-          <a className="mr-5 hover:text-gray-900 cursor-pointer">Third Link</a>
-          <a className="mr-5 hover:text-gray-900 cursor-pointer">Fourth Link</a>
+          {navigations.map((navigation) => (
+            <Link
+              key={navigation.path}
+              to={navigation.path}
+              className="mr-5 hover:text-purple-900 cursor-pointer hover:underline underline-offset-2 underline-purple-500"
+            >
+              {navigation.name}
+            </Link>
+          ))}
         </nav>
         <button className="inline-flex items-center bg-purple-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-purple-600 rounded text-base mt-4 md:mt-0">
           Go To Cart

@@ -1,7 +1,7 @@
 import Hero from "../../components/Hero/Hero";
 import Products from "../../components/Products/Products";
-import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import StatCard from "../../components/StatCard/StatCard";
+import FeatureCard from "../../components/FeatureCard/FeatureCard";
 import { useEffect, useState } from "react";
 
 const Home = () => {
