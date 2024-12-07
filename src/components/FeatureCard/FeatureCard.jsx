@@ -15,10 +15,10 @@ const FeatureCard = ({ cards = [] }) => {
             Master Cleanse Reliac Heirloom
           </h1>
         </div>
-        {cards?.map((card) => {
-          return (
-            <div key={card}>
-              <div className="flex flex-wrap -m-4">
+        <div className="flex flex-wrap -m-4">
+          {cards?.map((card) => {
+            return (
+              <div key={card}>
                 <div className="p-4 md:w-1/3">
                   <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                     <div className="flex items-center mb-3">
@@ -62,9 +62,9 @@ const FeatureCard = ({ cards = [] }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
